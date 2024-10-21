@@ -1,0 +1,111 @@
+C:\Users\darkd\source\repos\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\darkd\source\repos\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\darkd\source\repos\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.csproj.AssemblyReference.cache
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\MainWindow.g.cs
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\Pages\LoginPage.g.cs
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\App.g.cs
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.cache
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.lref
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\App.baml
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\MainWindow.baml
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\Pages\LoginPage.baml
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.g.resources
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\darkd\source\repos\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\EntityFramework.dll
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\EntityFramework.xml
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\darkd\Desktop\PetShop\PetShop\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.AssemblyReference.cache
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\MainWindow.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\LoginPage.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\ViewProducts.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\App.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop_Content.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.cache
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.lref
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\App.baml
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\MainWindow.baml
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\LoginPage.baml
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\ViewProducts.baml
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.g.resources
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\PetShop.pdb
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\AddEditPage.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.g.cs
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\AddEditPage.baml
+C:\Users\darkd\Desktop\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\PetShop.exe.config
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\PetShop.exe
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\PetShop.pdb
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\EntityFramework.dll
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\EntityFramework.xml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.csproj.AssemblyReference.cache
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\MainWindow.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\AddEditPage.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\LoginPage.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\ViewProducts.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\App.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop_Content.g.cs
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.cache
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.lref
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\App.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\MainWindow.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\AddEditPage.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\LoginPage.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\Pages\ViewProducts.baml
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.g.resources
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.csproj.Up2Date
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.exe
+C:\Users\FoxDa\OneDrive\Рабочий стол\PetShop\PetShop\obj\Debug\PetShop.pdb
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\PetShop.exe.config
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\PetShop.exe
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\PetShop.pdb
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\EntityFramework.dll
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.dll
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\EntityFramework.xml
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\EntityFramework.SqlServer.xml
+D:\2024\Лис\popitka 2\PetShop\PetShop\bin\Debug\ru\EntityFramework.resources.dll
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.csproj.AssemblyReference.cache
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\MainWindow.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\AddEditPage.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\LoginPage.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\ViewProducts.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\App.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop_Content.g.cs
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.cache
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop_MarkupCompile.lref
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\App.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\MainWindow.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\AddEditPage.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\AdminLKPage.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\LoginPage.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\Pages\ViewProducts.baml
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.g.resources
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.Properties.Resources.resources
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.csproj.GenerateResource.cache
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.exe
+D:\2024\Лис\popitka 2\PetShop\PetShop\obj\Debug\PetShop.pdb

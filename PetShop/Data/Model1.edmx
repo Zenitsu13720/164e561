@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище PetShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+          <Property Name="DeliveryDate" Type="date" Nullable="false" />
+          <Property Name="PickPoint" Type="int" />
+          <Property Name="GetCode" Type="int" />
+          <Property Name="StatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="OrderProduct">
+          <Key>
+            <PropertyRef Name="OrderProductID" />
+          </Key>
+          <Property Name="OrderProductID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ProductCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderStatusID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PickPoint">
+          <Key>
+            <PropertyRef Name="PickPointID" />
+          </Key>
+          <Property Name="PickPointID" Type="int" Nullable="false" />
+          <Property Name="IndexID" Type="int" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="StreetID" Type="int" />
+          <Property Name="HouseNumber" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="PickPointCity">
+          <Key>
+            <PropertyRef Name="PickPointCityID" />
+          </Key>
+          <Property Name="PickPointCityID" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PickPointIndex">
+          <Key>
+            <PropertyRef Name="PickPointIndexID" />
+          </Key>
+          <Property Name="PickPointIndexID" Type="int" Nullable="false" />
+          <Property Name="PickPointIndexValue" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PickPointStreet">
+          <Key>
+            <PropertyRef Name="PickPointStreetID" />
+          </Key>
+          <Property Name="PickPointStreetID" Type="int" Nullable="false" />
+          <Property Name="StreetName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductArticle" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductNameID" Type="int" Nullable="false" />
+          <Property Name="ProductCost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProductMaxDiscount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="ProductManufacturerID" Type="int" Nullable="false" />
+          <Property Name="ProductProviderID" Type="int" Nullable="false" />
+          <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+          <Property Name="IdUnit" Type="int" />
+          <Property Name="ProductCurrentDiscount" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="ProductQuantityInStock" Type="int" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProductPhoto" Type="image" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductManufacturer">
+          <Key>
+            <PropertyRef Name="ProductManufacturerID" />
+          </Key>
+          <Property Name="ProductManufacturerID" Type="int" Nullable="false" />
+          <Property Name="ManufacturerName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductName">
+          <Key>
+            <PropertyRef Name="ProductNameID" />
+          </Key>
+          <Property Name="ProductNameID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductProvider">
+          <Key>
+            <PropertyRef Name="ProductProviderID" />
+          </Key>
+          <Property Name="ProductProviderID" Type="int" Nullable="false" />
+          <Property Name="ProviderName" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="255" />
+          <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="int" Nullable="false" />
+          <Property Name="UserRole" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_OrderPickPoint">
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPoint">
+              <PropertyRef Name="PickPointID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PickPoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderStatus">
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="OrderStatusID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderUser">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointCity">
+          <End Role="PickPointCity" Type="Self.PickPointCity" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointCity">
+              <PropertyRef Name="PickPointCityID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointIndex">
+          <End Role="PickPointIndex" Type="Self.PickPointIndex" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointIndex">
+              <PropertyRef Name="PickPointIndexID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="IndexID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointStreet">
+          <End Role="PickPointStreet" Type="Self.PickPointStreet" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointStreet">
+              <PropertyRef Name="PickPointStreetID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="StreetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Units">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory">
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductManufacturer">
+          <End Role="ProductManufacturer" Type="Self.ProductManufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductManufacturer">
+              <PropertyRef Name="ProductManufacturerID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductName">
+          <End Role="ProductName" Type="Self.ProductName" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductName">
+              <PropertyRef Name="ProductNameID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProvider">
+          <End Role="ProductProvider" Type="Self.ProductProvider" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductProvider">
+              <PropertyRef Name="ProductProviderID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductProviderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище PetShopModelContainer">
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickPoint" EntityType="Self.PickPoint" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickPointCity" EntityType="Self.PickPointCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickPointIndex" EntityType="Self.PickPointIndex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickPointStreet" EntityType="Self.PickPointStreet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductManufacturer" EntityType="Self.ProductManufacturer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductName" EntityType="Self.ProductName" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductProvider" EntityType="Self.ProductProvider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Units" EntityType="Self.Units" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_OrderPickPoint" Association="Self.FK_OrderPickPoint">
+            <End Role="PickPoint" EntitySet="PickPoint" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Order" Association="Self.FK_OrderProduct_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Product" Association="Self.FK_OrderProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderStatus" Association="Self.FK_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderUser" Association="Self.FK_OrderUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointCity" Association="Self.FK_PickPointCity">
+            <End Role="PickPointCity" EntitySet="PickPointCity" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointIndex" Association="Self.FK_PickPointIndex">
+            <End Role="PickPointIndex" EntitySet="PickPointIndex" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointStreet" Association="Self.FK_PickPointStreet">
+            <End Role="PickPointStreet" EntitySet="PickPointStreet" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Units" Association="Self.FK_Product_Units">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory" Association="Self.FK_ProductCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductManufacturer" Association="Self.FK_ProductManufacturer">
+            <End Role="ProductManufacturer" EntitySet="ProductManufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductName" Association="Self.FK_ProductName">
+            <End Role="ProductName" EntitySet="ProductName" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProvider" Association="Self.FK_ProductProvider">
+            <End Role="ProductProvider" EntitySet="ProductProvider" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole" Association="Self.FK_UserRole">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PickPoint" Type="Int32" />
+          <Property Name="GetCode" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" />
+          <NavigationProperty Name="PickPoint1" Relationship="Self.FK_OrderPickPoint" FromRole="Order" ToRole="PickPoint" />
+          <NavigationProperty Name="OrderProduct" Relationship="Self.FK_OrderProduct_Order" FromRole="Order" ToRole="OrderProduct" />
+          <NavigationProperty Name="OrderStatus" Relationship="Self.FK_OrderStatus" FromRole="Order" ToRole="OrderStatus" />
+          <NavigationProperty Name="User" Relationship="Self.FK_OrderUser" FromRole="Order" ToRole="User" />
+        </EntityType>
+        <EntityType Name="OrderProduct">
+          <Key>
+            <PropertyRef Name="OrderProductID" />
+          </Key>
+          <Property Name="OrderProductID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="ProductCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderProduct_Order" FromRole="OrderProduct" ToRole="Order" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_OrderProduct_Product" FromRole="OrderProduct" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderStatus" FromRole="OrderStatus" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="PickPoint">
+          <Key>
+            <PropertyRef Name="PickPointID" />
+          </Key>
+          <Property Name="PickPointID" Type="Int32" Nullable="false" />
+          <Property Name="IndexID" Type="Int32" />
+          <Property Name="CityID" Type="Int32" />
+          <Property Name="StreetID" Type="Int32" />
+          <Property Name="HouseNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderPickPoint" FromRole="PickPoint" ToRole="Order" />
+          <NavigationProperty Name="PickPointCity" Relationship="Self.FK_PickPointCity" FromRole="PickPoint" ToRole="PickPointCity" />
+          <NavigationProperty Name="PickPointIndex" Relationship="Self.FK_PickPointIndex" FromRole="PickPoint" ToRole="PickPointIndex" />
+          <NavigationProperty Name="PickPointStreet" Relationship="Self.FK_PickPointStreet" FromRole="PickPoint" ToRole="PickPointStreet" />
+        </EntityType>
+        <EntityType Name="PickPointCity">
+          <Key>
+            <PropertyRef Name="PickPointCityID" />
+          </Key>
+          <Property Name="PickPointCityID" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PickPoint" Relationship="Self.FK_PickPointCity" FromRole="PickPointCity" ToRole="PickPoint" />
+        </EntityType>
+        <EntityType Name="PickPointIndex">
+          <Key>
+            <PropertyRef Name="PickPointIndexID" />
+          </Key>
+          <Property Name="PickPointIndexID" Type="Int32" Nullable="false" />
+          <Property Name="PickPointIndexValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PickPoint" Relationship="Self.FK_PickPointIndex" FromRole="PickPointIndex" ToRole="PickPoint" />
+        </EntityType>
+        <EntityType Name="PickPointStreet">
+          <Key>
+            <PropertyRef Name="PickPointStreetID" />
+          </Key>
+          <Property Name="PickPointStreetID" Type="Int32" Nullable="false" />
+          <Property Name="StreetName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PickPoint" Relationship="Self.FK_PickPointStreet" FromRole="PickPointStreet" ToRole="PickPoint" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductArticle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductNameID" Type="Int32" Nullable="false" />
+          <Property Name="ProductCost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ProductMaxDiscount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="ProductManufacturerID" Type="Int32" Nullable="false" />
+          <Property Name="ProductProviderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="IdUnit" Type="Int32" />
+          <Property Name="ProductCurrentDiscount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="ProductQuantityInStock" Type="Int32" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProductPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="OrderProduct" Relationship="Self.FK_OrderProduct_Product" FromRole="Product" ToRole="OrderProduct" />
+          <NavigationProperty Name="Units" Relationship="Self.FK_Product_Units" FromRole="Product" ToRole="Units" />
+          <NavigationProperty Name="ProductCategory" Relationship="Self.FK_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
+          <NavigationProperty Name="ProductManufacturer" Relationship="Self.FK_ProductManufacturer" FromRole="Product" ToRole="ProductManufacturer" />
+          <NavigationProperty Name="ProductName" Relationship="Self.FK_ProductName" FromRole="Product" ToRole="ProductName" />
+          <NavigationProperty Name="ProductProvider" Relationship="Self.FK_ProductProvider" FromRole="Product" ToRole="ProductProvider" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductCategory" FromRole="ProductCategory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductManufacturer">
+          <Key>
+            <PropertyRef Name="ProductManufacturerID" />
+          </Key>
+          <Property Name="ProductManufacturerID" Type="Int32" Nullable="false" />
+          <Property Name="ManufacturerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductManufacturer" FromRole="ProductManufacturer" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductName">
+          <Key>
+            <PropertyRef Name="ProductNameID" />
+          </Key>
+          <Property Name="ProductNameID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductName" FromRole="ProductName" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductProvider">
+          <Key>
+            <PropertyRef Name="ProductProviderID" />
+          </Key>
+          <Property Name="ProductProviderID" Type="Int32" Nullable="false" />
+          <Property Name="ProviderName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ProductProvider" FromRole="ProductProvider" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_Units" FromRole="Units" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="FullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_OrderUser" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK_UserRole" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Int32" Nullable="false" />
+          <Property Name="UserRole1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserRole" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_OrderPickPoint">
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPoint">
+              <PropertyRef Name="PickPointID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PickPoint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderStatus">
+          <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="OrderStatusID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderUser">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="OrderProduct" Type="Self.OrderProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderProduct">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointCity">
+          <End Role="PickPointCity" Type="Self.PickPointCity" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointCity">
+              <PropertyRef Name="PickPointCityID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointIndex">
+          <End Role="PickPointIndex" Type="Self.PickPointIndex" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointIndex">
+              <PropertyRef Name="PickPointIndexID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="IndexID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickPointStreet">
+          <End Role="PickPointStreet" Type="Self.PickPointStreet" Multiplicity="0..1" />
+          <End Role="PickPoint" Type="Self.PickPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PickPointStreet">
+              <PropertyRef Name="PickPointStreetID" />
+            </Principal>
+            <Dependent Role="PickPoint">
+              <PropertyRef Name="StreetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Units">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="IdUnit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory">
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCategory">
+              <PropertyRef Name="ProductCategoryID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductManufacturer">
+          <End Role="ProductManufacturer" Type="Self.ProductManufacturer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductManufacturer">
+              <PropertyRef Name="ProductManufacturerID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductName">
+          <End Role="ProductName" Type="Self.ProductName" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductName">
+              <PropertyRef Name="ProductNameID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductNameID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProvider">
+          <End Role="ProductProvider" Type="Self.ProductProvider" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductProvider">
+              <PropertyRef Name="ProductProviderID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductProviderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRole">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PetShopEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="OrderProduct" EntityType="Self.OrderProduct" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" />
+          <EntitySet Name="PickPoint" EntityType="Self.PickPoint" />
+          <EntitySet Name="PickPointCity" EntityType="Self.PickPointCity" />
+          <EntitySet Name="PickPointIndex" EntityType="Self.PickPointIndex" />
+          <EntitySet Name="PickPointStreet" EntityType="Self.PickPointStreet" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" />
+          <EntitySet Name="ProductManufacturer" EntityType="Self.ProductManufacturer" />
+          <EntitySet Name="ProductName" EntityType="Self.ProductName" />
+          <EntitySet Name="ProductProvider" EntityType="Self.ProductProvider" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Units" EntityType="Self.Units" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" />
+          <AssociationSet Name="FK_OrderPickPoint" Association="Self.FK_OrderPickPoint">
+            <End Role="PickPoint" EntitySet="PickPoint" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Order" Association="Self.FK_OrderProduct_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderStatus" Association="Self.FK_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderUser" Association="Self.FK_OrderUser">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProduct_Product" Association="Self.FK_OrderProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderProduct" EntitySet="OrderProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointCity" Association="Self.FK_PickPointCity">
+            <End Role="PickPointCity" EntitySet="PickPointCity" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointIndex" Association="Self.FK_PickPointIndex">
+            <End Role="PickPointIndex" EntitySet="PickPointIndex" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickPointStreet" Association="Self.FK_PickPointStreet">
+            <End Role="PickPointStreet" EntitySet="PickPointStreet" />
+            <End Role="PickPoint" EntitySet="PickPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Units" Association="Self.FK_Product_Units">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory" Association="Self.FK_ProductCategory">
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductManufacturer" Association="Self.FK_ProductManufacturer">
+            <End Role="ProductManufacturer" EntitySet="ProductManufacturer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductName" Association="Self.FK_ProductName">
+            <End Role="ProductName" EntitySet="ProductName" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProvider" Association="Self.FK_ProductProvider">
+            <End Role="ProductProvider" EntitySet="ProductProvider" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRole" Association="Self.FK_UserRole">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PetShopModelContainer" CdmEntityContainer="PetShopEntities">
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="PetShopModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="PickPoint" ColumnName="PickPoint" />
+                <ScalarProperty Name="GetCode" ColumnName="GetCode" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderProduct">
+            <EntityTypeMapping TypeName="PetShopModel.OrderProduct">
+              <MappingFragment StoreEntitySet="OrderProduct">
+                <ScalarProperty Name="OrderProductID" ColumnName="OrderProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductCount" ColumnName="ProductCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="PetShopModel.OrderStatus">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickPoint">
+            <EntityTypeMapping TypeName="PetShopModel.PickPoint">
+              <MappingFragment StoreEntitySet="PickPoint">
+                <ScalarProperty Name="PickPointID" ColumnName="PickPointID" />
+                <ScalarProperty Name="IndexID" ColumnName="IndexID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="StreetID" ColumnName="StreetID" />
+                <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickPointCity">
+            <EntityTypeMapping TypeName="PetShopModel.PickPointCity">
+              <MappingFragment StoreEntitySet="PickPointCity">
+                <ScalarProperty Name="PickPointCityID" ColumnName="PickPointCityID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickPointIndex">
+            <EntityTypeMapping TypeName="PetShopModel.PickPointIndex">
+              <MappingFragment StoreEntitySet="PickPointIndex">
+                <ScalarProperty Name="PickPointIndexID" ColumnName="PickPointIndexID" />
+                <ScalarProperty Name="PickPointIndexValue" ColumnName="PickPointIndexValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickPointStreet">
+            <EntityTypeMapping TypeName="PetShopModel.PickPointStreet">
+              <MappingFragment StoreEntitySet="PickPointStreet">
+                <ScalarProperty Name="PickPointStreetID" ColumnName="PickPointStreetID" />
+                <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="PetShopModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductArticle" ColumnName="ProductArticle" />
+                <ScalarProperty Name="ProductNameID" ColumnName="ProductNameID" />
+                <ScalarProperty Name="ProductCost" ColumnName="ProductCost" />
+                <ScalarProperty Name="ProductMaxDiscount" ColumnName="ProductMaxDiscount" />
+                <ScalarProperty Name="ProductManufacturerID" ColumnName="ProductManufacturerID" />
+                <ScalarProperty Name="ProductProviderID" ColumnName="ProductProviderID" />
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
+                <ScalarProperty Name="ProductCurrentDiscount" ColumnName="ProductCurrentDiscount" />
+                <ScalarProperty Name="ProductQuantityInStock" ColumnName="ProductQuantityInStock" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductPhoto" ColumnName="ProductPhoto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategory">
+            <EntityTypeMapping TypeName="PetShopModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductManufacturer">
+            <EntityTypeMapping TypeName="PetShopModel.ProductManufacturer">
+              <MappingFragment StoreEntitySet="ProductManufacturer">
+                <ScalarProperty Name="ProductManufacturerID" ColumnName="ProductManufacturerID" />
+                <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductName">
+            <EntityTypeMapping TypeName="PetShopModel.ProductName">
+              <MappingFragment StoreEntitySet="ProductName">
+                <ScalarProperty Name="ProductNameID" ColumnName="ProductNameID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductProvider">
+            <EntityTypeMapping TypeName="PetShopModel.ProductProvider">
+              <MappingFragment StoreEntitySet="ProductProvider">
+                <ScalarProperty Name="ProductProviderID" ColumnName="ProductProviderID" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PetShopModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="PetShopModel.Units">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="PetShopModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="PetShopModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserRole1" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
